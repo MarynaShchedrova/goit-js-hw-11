@@ -4,7 +4,7 @@ import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const input = document.querySelector('.search-form-input');
-const btnSearch = document.querySelector('.search-form-button');
+const btnSearch = document.querySelector('.search-form');
 const gallery = document.querySelector('.gallery');
 const btnLoadMore = document.querySelector('.load-more');
 let gallerySimpleLightbox = new SimpleLightbox('.gallery a');
@@ -13,7 +13,7 @@ btnLoadMore.style.display = 'none';
 
 let pageNumber = 1;
 let trimmedValue;
-btnSearch.addEventListener('click', event => {
+btnSearch.addEventListener('submit', event => {
     event.preventDefault();
     cleanGallery();
     trimmedValue = input.value.trim();
