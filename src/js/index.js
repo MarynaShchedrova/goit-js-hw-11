@@ -12,11 +12,11 @@ let gallerySimpleLightbox = new SimpleLightbox('.gallery a');
 btnLoadMore.style.display = 'none';
 
 let pageNumber = 1;
-
+let trimmedValue;
 btnSearch.addEventListener('click', event => {
     event.preventDefault();
     cleanGallery();
-    const trimmedValue = input.value.trim();
+    trimmedValue = input.value.trim();
     if (trimmedValue !== '') {
         fetchImages(trimmedValue, pageNumber).then(foundData => {
             if (foundData.hits.length === 0) {
